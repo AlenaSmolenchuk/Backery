@@ -28,6 +28,22 @@ public class Order {
                 '}';
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public Map<Class<Dish>, Integer> getProductMap() {
+        return productMap;
+    }
+
+    public LocalDate getCreationDate() {
+        return creationDate;
+    }
+
+    public Type getDeliveryType() {
+        return deliveryType;
+    }
+
     public Order(String city, Map<Class<Dish>, Integer> productMap, LocalDate creationDate, Type deliveryType) {
         this.city = city;
         this.productMap = productMap;

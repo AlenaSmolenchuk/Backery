@@ -1,5 +1,6 @@
 package ru.mts.backery;
 
+import ru.mts.backery.enums.Type;
 import ru.mts.backery.service.OrderGenerator;
 
 public class OrderHandler {
@@ -15,20 +16,20 @@ public class OrderHandler {
         }
     }
 
+    public void onGetDishes(Order order) {
+        if (order.getDeliveryType().equals(Type.DELIVERY)) giveOrderToDelivery();
+    }
 
-    public void giveOrder(Order order) {
+
+    void giveOrderToCook() {
+
+    }
+
+    void giveOrderToDelivery() {
         synchronized (deliveryLock) {
-            giveOrderToDelivery();
+
         }
     }
 
-    void giveOrderToCook() {
-    }
-
-    void giveOrderToDelivery() {}
-
-    public static void main(String[] args) {
-        System.out.println(OrderGenerator.getOrder());
-    }
 
 }
